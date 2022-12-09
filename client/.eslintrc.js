@@ -16,5 +16,7 @@ module.exports = {
     semi: ['error', 'always'],
     'no-console': 0,
     'no-underscore-dangle': 0,
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.test.js', '**/*.spec.js'] }],
+
   },
 };

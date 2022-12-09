@@ -5,6 +5,7 @@ const signUp = async (req, res) => {
   const { userName, password, email } = req.body;
 
   if (userName && password && email) {
+    console.log('привет singup');
     try {
       const newUser = await User.create({
         userName,

@@ -27,6 +27,7 @@ export const signUp = (payload, navigate) => async (dispatch) => {
       'content-type': 'application/json',
       'Access-Control-Allow-Credentials': true,
     },
+    // credentials: 'include',
     body: JSON.stringify(payload),
   });
   if (response.status === 200) {
@@ -48,7 +49,6 @@ export const signIn = (payload, navigate) => async (dispatch) => {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Credentials': true,
     },
-    credentials: 'include',
     body: JSON.stringify(payload),
   });
   if (response.status === 200) {
@@ -77,7 +77,7 @@ export const signOut = () => async (dispatch) => {
 
 export const checkAuth = () => async (dispatch) => {
   const response = await fetch(endPoints.checkAuth(), {
-    'Access-Control-Allow-Credentials': true,
+    сredentials: true,
   });
   if (response.status === 200) {
     const user = await response.json();

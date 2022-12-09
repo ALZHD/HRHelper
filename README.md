@@ -1,7 +1,3 @@
-# React Auth Postgres
-
-[Видео](https://youtu.be/BBTtkAFyxzE)
-В данном проекте реализована регистрация/авторизация пользователя средствами cookies и session
 
 ## Как запустить server
 
@@ -14,9 +10,9 @@ COOKIE_SECRET=catdog
 COOKIE_NAME=authorisation
 PORT=5555
 DB_HOST=localhost
-DB_USERNAME=adam
+DB_USERNAME=alex
 DB_USER_PASSWORD=null
-DB_NAME=elbrus
+DB_NAME=hrhelper
 DB_PORT=5432
 DB_DIALECT=postgres
 ```

@@ -2,20 +2,23 @@ const { Info } = require('../../db/models');
 
 const getInfo = async (req, res) => {
   const infoArray = req.body.flat();
-  if (infoArray.length = 1) {
+  console.log(infoArray);
+  if (infoArray.length === 1) {
+    console.log('da1');
     const newInfo = await Info.create({
       profileName: infoArray[0],
     });
     return res.json({ name: infoArray[0], contacts: 'не обраружено' });
   }
-  if (infoArray.length = 2) {
+  if (infoArray.length === 2) {
     const newInfo = await Info.create({
       profileName: infoArray[0],
       contactOne: infoArray[1],
     });
     return res.json({ name: infoArray[0], contacts: infoArray[1] });
   }
-  if (infoArray.length = 3) {
+  if (infoArray.length === 3) {
+    console.log('da');
     const newInfo = await Info.create({
       profileName: infoArray[0],
       contactOne: infoArray[1],
@@ -23,7 +26,7 @@ const getInfo = async (req, res) => {
     });
     return res.json({ name: infoArray[0], contacts: [infoArray[1], infoArray[2]] });
   }
-  if (infoArray.length = 4) {
+  if (infoArray.length === 4) {
     const newInfo = await Info.create({
       profileName: infoArray[0],
       contactOne: infoArray[1],
@@ -35,7 +38,9 @@ const getInfo = async (req, res) => {
 };
 
 const showInfo = async (req, res) => {
-  const allInfo = Info.findAll();
+  console.log('привет');
+  const allInfo = await Info.findAll();
+  console.log(allInfo);
   return res.json(allInfo);
 };
 
