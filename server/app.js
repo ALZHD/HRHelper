@@ -47,8 +47,8 @@ const corsOptions = {
 
 app.use((req, res, next) => { console.log(req.body); next(); });
 
-app.use(cors(corsOptions));
-app.options('*', cors());
+app.use(cors({ origin: true, credentials: true}));
+// app.options('*', cors());
 // APP'S ROUTES
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);

@@ -6,7 +6,7 @@ const editUser = async (req, res) => {
     updatedFields = Object.fromEntries(updatedFields);
     try {
       // eslint-disable-next-line max-len
-      const [, updatedUser] = await User.update(updatedFields, {
+      const [updatedUser] = await User.update(updatedFields, {
         where: { id: req.session.user.id },
         returning: true,
         plain: true,

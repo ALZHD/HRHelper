@@ -38,7 +38,7 @@ const getInfo = async (req, res) => {
 };
 
 const showInfo = async (req, res) => {
-  console.log('привет');
+  // console.log('привет');
   const allInfo = await Info.findAll();
   console.log(allInfo);
   return res.json(allInfo);

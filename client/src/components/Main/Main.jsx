@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import Info from '../InfoTable/Info';
 
 function Main() {
   const [allInfo, setAllInfo] = useState([]);
@@ -16,13 +17,25 @@ function Main() {
   //   }
   // };
   return (
+  // <div>
+  //   {
+  // photoDB.length > 1
+  //   ? (allInfo.map((el, index) => <Info key={} info={el} />))
+  //   : (
+  //     <h5>
+  //       Here the info uploaded by HRHelper
+  //     </h5>
+  //   )
+  // }
+  // </div>
+
     <div className="weather-block">
       {/* <input
-        type="text"
-        className="location input-field"
-        placeholder="Update"
-        onKeyDown={updateAllInfo}
-      /> */}
+      type="text"
+      className="location input-field"
+      placeholder="Update"
+      onKeyDown={updateAllInfo}
+    /> */}
       <div>{JSON.stringify(allInfo)}</div>
     </div>
   );

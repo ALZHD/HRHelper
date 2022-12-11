@@ -18,6 +18,7 @@ function App() {
 
   useEffect(() => {
     dispatch(checkAuth());
+    console.log('checkAuth', checkAuth);
   }, []);
 
   return (

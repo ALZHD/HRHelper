@@ -25,9 +25,9 @@ export const signUp = (payload, navigate) => async (dispatch) => {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      'Access-Control-Allow-Credentials': true,
     },
-    // credentials: 'include',
+    credentials: 'include',
+    mode: 'cors',
     body: JSON.stringify(payload),
   });
   if (response.status === 200) {
@@ -42,13 +42,15 @@ export const signUp = (payload, navigate) => async (dispatch) => {
 };
 
 export const signIn = (payload, navigate) => async (dispatch) => {
+  console.log(document.cookie);
   dispatch(enableLoader());
   const response = await fetch(endPoints.signIn(), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Credentials': true,
     },
+    credentials: 'include',
+    mode: 'cors',
     body: JSON.stringify(payload),
   });
   if (response.status === 200) {
@@ -68,7 +70,8 @@ export const deleteUser = () => ({
 
 export const signOut = () => async (dispatch) => {
   const response = await fetch(endPoints.signOut(), {
-    'Access-Control-Allow-Credentials': true,
+    credentials: 'include',
+    mode: 'cors',
   });
   if (response.status === 200) {
     dispatch(deleteUser());
@@ -76,9 +79,15 @@ export const signOut = () => async (dispatch) => {
 };
 
 export const checkAuth = () => async (dispatch) => {
+  console.log(document.cookie);
   const response = await fetch(endPoints.checkAuth(), {
-    сredentials: true,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    сredentials: 'include',
+    mode: 'cors',
   });
+  console.log(response);
   if (response.status === 200) {
     const user = await response.json();
     dispatch(setUser(user));
@@ -95,7 +104,8 @@ export const editUser = (user, navigate) => async (dispatch, getState) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    'Access-Control-Allow-Credentials': true,
+    credentials: 'include',
+    mode: 'cors',
     body: JSON.stringify(user),
   });
   if (response.status === 200) {
