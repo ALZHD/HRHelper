@@ -9,7 +9,7 @@ function Nav() {
       <div className="container">
         <div className="container-fluid d-flex">
           <Link className="navbar-brand" to="/">
-            Auth App
+            HR Helper
           </Link>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">

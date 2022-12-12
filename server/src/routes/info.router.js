@@ -7,5 +7,6 @@ const infoRouter = new Router();
 
 infoRouter.get('/showinfo', infoController.showInfo);
 infoRouter.post('/getinfo', infoController.getInfo);
+infoRouter.delete('/:id', infoController.deleteInfo);
 
 module.exports = infoRouter;

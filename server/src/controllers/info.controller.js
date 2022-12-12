@@ -8,7 +8,7 @@ const getInfo = async (req, res) => {
     const newInfo = await Info.create({
       profileName: infoArray[0],
     });
-    return res.json({ name: infoArray[0], contacts: 'не обраружено' });
+    return res.json({ name: infoArray[0], contacts: 'не обнаружено' });
   }
   if (infoArray.length === 2) {
     const newInfo = await Info.create({
@@ -44,6 +44,11 @@ const showInfo = async (req, res) => {
   return res.json(allInfo);
 };
 
+const deleteInfo = async (req, res) => {
+  await Info.destroy({ where: { id: req.params.id } });
+  return res.sendStatus(200);
+};
+
 module.exports = {
-  getInfo, showInfo,
+  getInfo, showInfo, deleteInfo,
 };

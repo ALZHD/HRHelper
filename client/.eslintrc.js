@@ -17,6 +17,6 @@ module.exports = {
     'no-console': 0,
     'no-underscore-dangle': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.test.js', '**/*.spec.js'] }],
-
+    'react/prop-types': 0,
   },
 };

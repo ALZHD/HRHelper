@@ -9,6 +9,7 @@ const usersRouter = require('./src/routes/users.router');
 const infoRouter = require('./src/routes/info.router');
 
 const app = express();
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 
 const { PORT, COOKIE_SECRET, COOKIE_NAME } = process.env;
@@ -23,7 +24,7 @@ app.set('cookieName', COOKIE_NAME);
 //     credentials: true,
 //   }),
 // );
-app.use(express.json());
+
 app.use(
   session({
     name: app.get('cookieName'),
@@ -47,7 +48,6 @@ const corsOptions = {
 
 app.use((req, res, next) => { console.log(req.body); next(); });
 
-app.use(cors({ origin: true, credentials: true}));
 // app.options('*', cors());
 // APP'S ROUTES
 app.use('/auth', authRouter);

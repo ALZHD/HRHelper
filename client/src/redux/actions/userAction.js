@@ -74,17 +74,18 @@ export const signOut = () => async (dispatch) => {
     mode: 'cors',
   });
   if (response.status === 200) {
+    localStorage.removeItem('TokenName');
     dispatch(deleteUser());
   }
 };
 
 export const checkAuth = () => async (dispatch) => {
-  console.log(document.cookie);
+  console.log('привет');
   const response = await fetch(endPoints.checkAuth(), {
     headers: {
       'Content-Type': 'application/json',
     },
-    сredentials: 'include',
+    credentials: 'include',
     mode: 'cors',
   });
   console.log(response);
